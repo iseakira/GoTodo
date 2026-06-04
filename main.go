@@ -40,6 +40,8 @@ func main() {
 		bundebug.FromEnv("BUNDEBUG"),
 	))
 
+	//contextはキャンセルやタイムアウトなどの処理を行える
+
 	ctx := context.Background()
 
 	_,err = db.NewCreateTable().Model((*Todo)(nil)).IfNotExists().Exec(ctx)
