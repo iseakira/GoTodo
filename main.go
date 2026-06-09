@@ -8,6 +8,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 	"github.com/uptrace/bun"
 	"github.com/uptrace/bun/dialect/pgdialect"
@@ -28,8 +29,9 @@ type Todo struct {
 }
 
 func main() {
+	godotenv.Load()
 
-	sqldb,err := sql.Open("postgres",os.Getenv("DATABASE_URL"))
+	sqldb,err := sql.Open("pg",os.Getenv("DATABASE_URL"))
 
 	if err != nil {
 		log.Fatal(err)
