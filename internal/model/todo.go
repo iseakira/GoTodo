@@ -13,6 +13,6 @@ type Todo struct {
 	Done bool `bun:"done"`
 	Until time.Time `bun:"until,nullzero"`
 	CreatedAt time.Time
-	UpdateAt time.Time `bun:",nullzero"`
+	UpdatedAt time.Time `bun:",nullzero"`
 	DeletedAt time.Time `bun:",soft_delete,nullzero"`
 }

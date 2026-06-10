@@ -16,6 +16,7 @@ func NewTodoHandler(db *bun.DB) *TodoHandler {
 	return &TodoHandler{db: db}
 }
 
+//Handkerのメソッド
 func (h *TodoHandler) Index(c echo.Context) error {
 	return c.String(http.StatusOK, "Hello")
 }
