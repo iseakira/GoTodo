@@ -3,11 +3,11 @@ package main
 import (
 	"context"
 	"log"
-	"net/http"
 
 	"github.com/labstack/echo/v4"
 
 	"gotodo/internal/config"
+	"gotodo/internal/handler"
 	"gotodo/internal/model"
 )
 
@@ -24,10 +24,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	e := echo.New()
+	h := handler.NewTodoHandler(db)
 
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "")
-	})
+	e := echo.New()
+	e.GET("/", h.Index)
 	e.Logger.Fatal(e.Start(":8989"))
 }
