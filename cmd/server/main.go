@@ -14,6 +14,7 @@ import (
 func main() {
 	config.LoadEnv()
 
+	//DBを作成
 	db := config.NewDB()
 	defer db.Close()
 
@@ -24,6 +25,7 @@ func main() {
 		log.Fatal(err)
 	}
 
+	//DBを持ったhandlerある意味依存性の注入
 	h := handler.NewTodoHandler(db)
 
 	e := echo.New()

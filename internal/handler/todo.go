@@ -11,10 +11,11 @@ type TodoHandler struct {
 	db *bun.DB
 }
 
+//構造体の実態をDB渡して生成する関数
 func NewTodoHandler(db *bun.DB) *TodoHandler {
 	return &TodoHandler{db: db}
 }
 
 func (h *TodoHandler) Index(c echo.Context) error {
-	return c.String(http.StatusOK, "")
+	return c.String(http.StatusOK, "Hello")
 }
