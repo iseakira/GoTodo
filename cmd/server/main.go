@@ -29,6 +29,11 @@ func main() {
 	h := handler.NewTodoHandler(db)
 
 	e := echo.New()
-	e.GET("/", h.Index)
+	e.GET("/todos", h.Index)
+	e.GET("/todos/:id",h.Show)
+	e.POST("/todos", h.Create)
+	e.PUT("/todos/:id",h.Update)
+	e.DELETE("/todos/:id", h.Delete)
+
 	e.Logger.Fatal(e.Start(":8989"))
 }
