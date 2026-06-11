@@ -11,6 +11,10 @@ type TodoRepository struct {
 	db *bun.DB
 }
 
+func NewTodoRepository(db *bun.DB) *TodoRepository {
+	return &TodoRepository{db:db}
+}
+
 //一覧取得
 //SELECT * FROM todos ORDER BY id ASC;
 //Model(&todos)でtodosに結果を入れることを指定
