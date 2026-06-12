@@ -4,7 +4,10 @@
       "Bash(go get:*)",
       "Bash(go build:*)",
       "Bash(mkdir -p backend)",
-      "Bash(mv cmd:*)"
+      "Bash(mv cmd:*)",
+      "Bash(mkdir -p src)",
+      "Bash(mv app:*)",
+      "Bash(mkdir -p src/lib src/types)"
     ]
   }
 }
