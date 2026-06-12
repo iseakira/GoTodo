@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(go get:*)",
-      "Bash(go build:*)"
+      "Bash(go build:*)",
+      "Bash(mkdir -p backend)",
+      "Bash(mv cmd:*)"
     ]
   }
 }
